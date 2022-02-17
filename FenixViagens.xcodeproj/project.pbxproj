@@ -13,6 +13,8 @@
 		273E23C7276CC466004F2EED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 273E23C5276CC466004F2EED /* Main.storyboard */; };
 		273E23C9276CC468004F2EED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 273E23C8276CC468004F2EED /* Assets.xcassets */; };
 		273E23CC276CC468004F2EED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 273E23CA276CC468004F2EED /* LaunchScreen.storyboard */; };
+		27498A2427BAE37100170917 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27498A2327BAE37100170917 /* LaunchScreenViewController.swift */; };
+		27498A2A27BB151900170917 /* AnimationPersonalized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27498A2927BB151900170917 /* AnimationPersonalized.swift */; };
 		276F72C5276E8704001BCEE8 /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276F72C3276E8704001BCEE8 /* TripTableViewCell.swift */; };
 		276F72C6276E8704001BCEE8 /* TripTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 276F72C4276E8704001BCEE8 /* TripTableViewCell.xib */; };
 		276F72CB276EA360001BCEE8 /* server-response.json in Resources */ = {isa = PBXBuildFile; fileRef = 276F72CA276EA360001BCEE8 /* server-response.json */; };
@@ -29,6 +31,7 @@
 		2782AA08277A472C00914FFA /* InternationalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2782AA06277A472C00914FFA /* InternationalTableViewCell.xib */; };
 		2782AA83277A7FCE00914FFA /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2782AA81277A7FCE00914FFA /* DetailsViewController.swift */; };
 		2782AA84277A7FCE00914FFA /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2782AA82277A7FCE00914FFA /* DetailsViewController.xib */; };
+		27868C4427B9C1DC00DDE9F4 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27868C4327B9C1DC00DDE9F4 /* Validator.swift */; };
 		27F203D62773F152008C3722 /* OffersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F203D42773F152008C3722 /* OffersTableViewCell.swift */; };
 		27F203D72773F152008C3722 /* OffersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27F203D52773F152008C3722 /* OffersTableViewCell.xib */; };
 		27F203DD2773F2EA008C3722 /* OffersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F203DC2773F2EA008C3722 /* OffersViewModel.swift */; };
@@ -43,6 +46,8 @@
 		273E23C8276CC468004F2EED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		273E23CB276CC468004F2EED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		273E23CD276CC468004F2EED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27498A2327BAE37100170917 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
+		27498A2927BB151900170917 /* AnimationPersonalized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationPersonalized.swift; sourceTree = "<group>"; };
 		276F72C3276E8704001BCEE8 /* TripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
 		276F72C4276E8704001BCEE8 /* TripTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TripTableViewCell.xib; sourceTree = "<group>"; };
 		276F72CA276EA360001BCEE8 /* server-response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "server-response.json"; sourceTree = "<group>"; };
@@ -59,6 +64,7 @@
 		2782AA06277A472C00914FFA /* InternationalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InternationalTableViewCell.xib; sourceTree = "<group>"; };
 		2782AA81277A7FCE00914FFA /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		2782AA82277A7FCE00914FFA /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		27868C4327B9C1DC00DDE9F4 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		27F203D42773F152008C3722 /* OffersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersTableViewCell.swift; sourceTree = "<group>"; };
 		27F203D52773F152008C3722 /* OffersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OffersTableViewCell.xib; sourceTree = "<group>"; };
 		27F203DC2773F2EA008C3722 /* OffersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffersViewModel.swift; sourceTree = "<group>"; };
@@ -148,6 +154,7 @@
 				276F72CD276EA3A7001BCEE8 /* DecodableData.swift */,
 				276F72D0276EA3B4001BCEE8 /* TypesOfTrips.swift */,
 				276F72D3276EA3BC001BCEE8 /* Trip.swift */,
+				27868C4327B9C1DC00DDE9F4 /* Validator.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -157,6 +164,8 @@
 			children = (
 				273E23C3276CC466004F2EED /* ViewController.swift */,
 				273E23C5276CC466004F2EED /* Main.storyboard */,
+				27498A2327BAE37100170917 /* LaunchScreenViewController.swift */,
+				27498A2927BB151900170917 /* AnimationPersonalized.swift */,
 				276F72C2276E869B001BCEE8 /* Cells */,
 				2782AA80277A7FAA00914FFA /* DetailsViewController */,
 				277270F0276D54AE0021FFE4 /* Header */,
@@ -308,9 +317,12 @@
 				276F72CE276EA3A7001BCEE8 /* DecodableData.swift in Sources */,
 				273E23C2276CC466004F2EED /* SceneDelegate.swift in Sources */,
 				2782AA83277A7FCE00914FFA /* DetailsViewController.swift in Sources */,
+				27868C4427B9C1DC00DDE9F4 /* Validator.swift in Sources */,
 				2782A9DD2779ED0800914FFA /* InternationalTripViewModel.swift in Sources */,
 				276F72C5276E8704001BCEE8 /* TripTableViewCell.swift in Sources */,
+				27498A2A27BB151900170917 /* AnimationPersonalized.swift in Sources */,
 				27F203DD2773F2EA008C3722 /* OffersViewModel.swift in Sources */,
+				27498A2427BAE37100170917 /* LaunchScreenViewController.swift in Sources */,
 				276F72DB276EA4B8001BCEE8 /* TripViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

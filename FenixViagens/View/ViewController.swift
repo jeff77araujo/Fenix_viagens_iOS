@@ -11,6 +11,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableViewTrip: UITableView!
     
+    var packageSelected: Trip?
+    var frameSelected: CGRect?
+    
 //    MARK: ROUTER FOR PRESENT
 //        let rootVC = TesteViewController()
 //        let navVC = UINavigationController(rootViewController: rootVC)
@@ -26,6 +29,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.delegate = self
         configTableView()
         view.backgroundColor = UIColor(red: 43.0/255.0, green: 42.0/255.0, blue: 41.0/255.0, alpha: 1)
     }
@@ -45,6 +49,8 @@ class ViewController: UIViewController {
         }
     }
 }
+
+// MARK: UITableViewDataSource
 
 extension ViewController: UITableViewDataSource {
     
@@ -100,14 +106,26 @@ extension ViewController: UITableViewDataSource {
         switch viewModel?.type {
         case .highlights, .international:
             let tripSelected = viewModel?.trips[indexPath.row]
+            
+            packageSelected = tripSelected
+            let attributeSelected = tableView.cellForRow(at: indexPath)
+            frameSelected = attributeSelected?.frame
+            
             routerDetailsViewController(tripSelected)
         case .offers:
             let offerSelected = viewModel?.trips[indexPath.row]
+            
+            packageSelected = offerSelected
+            let attributeSelected = tableView.cellForRow(at: indexPath)
+            frameSelected = attributeSelected?.frame
+            
             routerDetailsViewController(offerSelected)
         default: break
         }
     }
 }
+
+// MARK: UITableViewDelegate
 
 extension ViewController: UITableViewDelegate {
     
@@ -136,5 +154,23 @@ extension ViewController: UITableViewDelegate {
 extension ViewController: OffersTableViewCellDelegate {
     func didSelectView(_ trip: Trip?) {
         routerDetailsViewController(trip)
+    }
+}
+
+// MARK: UINavigationControllerDelegate
+
+extension ViewController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        guard let pathImage = packageSelected?.asset else { return nil }
+        guard let image = UIImage(named: pathImage) else { return nil }
+        guard let frame = frameSelected else { return nil }
+        
+        switch operation {
+        case .push:
+            return AnimationPersonalized(duration: TimeInterval(kCATransactionAnimationDuration) ?? 0.3, image: image, frameInitial: frame, presentationVC: true)
+        default:
+            return AnimationPersonalized(duration: TimeInterval(kCATransactionAnimationDuration) ?? 0.3, image: image, frameInitial: frame, presentationVC: false)
+        }
     }
 }

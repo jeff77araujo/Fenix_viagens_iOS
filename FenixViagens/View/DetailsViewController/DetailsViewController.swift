@@ -12,22 +12,24 @@ class DetailsViewController: UIViewController {
     static var identifier = String(describing: DetailsViewController.self)
     
     // MARK: Outlets
-    
     @IBOutlet weak var tripImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
-    @IBOutlet weak var buttonContinue: UIButton!
+    @IBOutlet weak var buttonBuy: UIButton!
     @IBOutlet weak var buttonCustom: UIView!
     @IBOutlet weak var dailyLabel: UILabel!
     @IBOutlet weak var priceDefaultLabel: UILabel!
     @IBOutlet weak var priceNewLabel: UILabel!
     
+    @IBOutlet weak var numberCard: UITextField!
+    @IBOutlet weak var nameCard: UITextField!
+    @IBOutlet weak var dateCard: UITextField!
+    @IBOutlet weak var passwordCard: UITextField!
     
     // MARK: Attributes
     var trip: Trip?
     
     // MARK: View Life Cycle
-    
     class func instance(_ trip: Trip) -> DetailsViewController {
         let detailsViewController = DetailsViewController(nibName: DetailsViewController.identifier, bundle: nil)
         detailsViewController.trip = trip
@@ -58,7 +60,7 @@ class DetailsViewController: UIViewController {
         }
         
         DispatchQueue.main.async {
-            self.buttonContinue.layer.cornerRadius = 8
+            self.buttonBuy.layer.cornerRadius = 8
             self.buttonCustom.layer.cornerRadius = 8
         }
     }
@@ -70,8 +72,26 @@ class DetailsViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func buttonContinue(_ sender: Any) {
-        router(bool: true)
+    @IBAction func buttonBuy(_ sender: UIButton) {
+        let textFields = [numberCard, nameCard, dateCard, passwordCard]
+        if Validator().validateTextFields(textFields) {
+            pulseButton(sender)
+            router(bool: true)
+        }
+    }
+    
+    func pulseButton(_ button: UIButton) {
+        let pulse = CASpringAnimation(keyPath: "transform.scale")
+        pulse.duration = 0.5
+        pulse.fromValue = 0.95
+        pulse.toValue = 1.0
+        pulse.autoreverses = true
+        pulse.repeatCount = 1
+        
+        pulse.initialVelocity = 0.5
+        pulse.damping = 1.0
+        
+        button.layer.add(pulse, forKey: nil)
     }
     
     // MARK: ROUTER
